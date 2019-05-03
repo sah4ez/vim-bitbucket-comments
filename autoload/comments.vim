@@ -33,5 +33,5 @@ function! comments#Download()
 	let $PR = pr
 	echo $REPO
 	echo $PR
-	execute(":! comments") 
+	execute(":! comments comment") 
 endfunction
