@@ -8,8 +8,8 @@ function! comments#Load()
 	echo g:name[7:]
 	wincmd h
 
-	let l:from = printf("/tmp/from_%s.comments", g:name[7:])
-	let l:to = printf("/tmp/to_%s.comments", g:name[7:])
+	let l:from = printf("%s/from_%s.comments", $PREFIX, g:name[7:])
+	let l:to = printf("%s/to_%s.comments", $PREFIX, g:name[7:])
 
 	echo l:from
 	echo l:to
@@ -33,5 +33,5 @@ function! comments#Download()
 	let $PR = pr
 	echo $REPO
 	echo $PR
-	execute(":! comments comment") 
+	execute(":! comments -d comment") 
 endfunction
