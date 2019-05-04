@@ -35,3 +35,12 @@ function! comments#Download()
 	echo $PR
 	execute(":! comments -d comment") 
 endfunction
+
+function! comments#MakeComment()
+	let l:line = line(".")
+	call inputsave()
+	let l:raw = input('comment: ')
+	call inputrestore()
+
+	execute ":! comments comment-line" l:line l:raw
+endfunction
