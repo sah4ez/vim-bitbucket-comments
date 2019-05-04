@@ -3,11 +3,11 @@ if exists("g:loaded_comments")
 endif
 let g:loaded_comments = 1
 
-command! CMTLoad call comments#Load()
-command! CMTDownload call comments#Download()
-command! CMTMakeComment call comments#MakeComment()<`2`>
+command! CMTLoad call comments#Load()<CR>
+command! CMTDownload call comments#Download()<CR>
+command! CMMakeComment call comments#MakeComment()<CR>
 
-nnoremap <space>lcc :call comments#Load()<CR>
-nnoremap <space>lcd :call comments#Download()<CR>
-nnoremap <space>lcm :call comments#MakeComment()<CR>
+nnoremap <space>lcc :CMTLoad
+nnoremap <space>lcd :CMTDownload
+nnoremap <space>lcm :CMMakeComment
 autocmd BufRead *.comments :set syntax=comments
